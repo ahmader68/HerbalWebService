@@ -20,3 +20,4 @@ Route::get('/plant' , "HomeController@plant");
 Route::get('/disease' , "HomeController@disease");
 Route::get('/plantDisease' , "HomeController@plantDisease");
 Route::get('/specificPlant/{id}' , "HomeController@getSpecificPlant");
+Route::get('/specificDisease/{id}',"HomeController@getSpecificDisease");

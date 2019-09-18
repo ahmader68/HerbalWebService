@@ -37,4 +37,13 @@ class HomeController extends Controller {
 
         return $SpecificPlant;
     }
+    public function getSpecificDisease($id){
+        $SpecificDisease = DB::table('tbl_diseases')
+            ->select('tbl_diseases.disease_name','tbl_plant_diseases.description')
+            ->join('tbl_plant_diseases','tbl_plant_diseases.disease_id',"=",'tbl_diseases.id')
+            ->where('tbl_plant_diseases.plant_id',"=",$id)
+            ->get();
+        return $SpecificDisease;
+    }
+
 }
